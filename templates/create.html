@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block import %}
+    <title>Criar Disco</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<main>
+    <form class = "formzin" action="{% url 'update/<int:pk>' %}" method="post">
+        
+        {% csrf_token %}
+        {{form}}
+
+        <button class="butaozin" type="submit">Enviar Disco</button>
+    </form>
+</main>
+
+{% endblock %}

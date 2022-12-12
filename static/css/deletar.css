@@ -1,0 +1,29 @@
+main
+{
+        display: flex;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        padding: 2%;
+        margin: 1% 25% 0% 25%;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+
+}
+input, button
+{
+    color: red;
+    font-weight: bolder;
+}
+.nao
+{
+    color: green;
+}
+p
+{
+    color: white;
+}
+form
+{
+    margin-top: 5%;
+}

@@ -1,0 +1,40 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+a
+{
+    text-decoration: None;
+    color: white;
+}
+header
+{
+    position: Relative;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: baseline;
+    background-color: #1f1f1f;
+    padding: 2%;
+
+}
+header div, header div nav a
+{
+    color: white;
+}
+body
+{
+ background-color: black;       
+} 
+
+header div a:hover{
+    color: cyan;
+}
+header div a:active{
+    color: red;
+}
+

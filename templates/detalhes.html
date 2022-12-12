@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block import  %}
+    <title>Detalhes</title>
+    <link rel="stylesheet" href="{% static 'css/detalhes.css' %}">
+{% endblock  %}
+
+{% block main %}
+    <main>
+        <section #="divizin">
+            <h1>Disco: {{object.nome}}.</h1>
+
+            <h2>Ano de lançamento: {{object.ano}}</h2>
+            <h2>Genero: {{object.genero}}</h2>
+            <h2>Publisher: {{object.selo_fonografico}}</h2>
+
+            <p id='UwU'>Descrição: {{object.descricao}}<p>
+        </section>
+    </main>
+{% endblock  %}
+

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block import %}
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+
+{% block main %}
+    <main> 
+        <div>
+            <h1>Hello World, Templastes!</h1>
+            {% comment %} {{discos}} {% endcomment %}
+        </div>
+        
+        <div class='divzin'>
+            <div class="mainmain">
+                {% for discos in object_list %}
+                    <h2 class="space_" ><a class="color_disk" href="{% url 'Detalhes' discos.id %}">{{discos.nome}}</a></h2>
+                {% endfor %}
+            </div>
+            
+            <div class="link_update">
+                {% for discos in object_list %}
+                    <h2><a class="color_update" href="{% url 'update' discos.id %}">alterar</a></h2>
+                {% endfor %}
+            </div>
+
+            <div class="link_update">
+                {% for discos in object_list %}
+                    <h2><a class="color_delete" href="{% url 'deletar' discos.id %}">deletar</a></h2>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}  
+    

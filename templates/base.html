@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    {% block import %}
+    
+    {% endblock %}
+    
+</head>
+
+<body>
+    <header class='headerzin'>
+        <div>
+            <a href="{% url 'Home' %}"><h1>Discos</h1></a>     
+        </div>
+
+        <div class='navi'>
+            <nav>
+                <a href="">Arquivos</a>
+                <a href="{% url 'criar_disco' %}">Adicionar Disco</a>
+            </nav>
+        </div>
+    </header>
+
+ 
+    {% block main %}
+    
+    {% endblock %}
+
+    <footer>
+        <div>
+            <a href="{% url 'Home' %}"><h2>Discos</h2></a>
+            {% for disco in object_list %}
+                <h3><a href="{% url 'Detalhes' disco.id %}">{{disco.nome}}  </a> </h3>
+            {% endfor %}
+        </div>
+        <div class="navizin2">
+            <nav class="navizin">
+                <a href="">Arquivos</a>
+                <a href="{% url 'criar_disco' %}">Adicionar Disco</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

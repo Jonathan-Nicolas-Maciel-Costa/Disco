@@ -1,0 +1,59 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+a
+{
+    text-decoration: None;
+}
+footer
+{
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    margin-top: calc(20vh);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 2%;
+
+}
+footer div, footer div nav a, footer div h3 a
+{
+    color: white;
+}
+footer div h3 a
+{
+    color: gray;
+}
+footer div h3 a:hover{
+    color: cyan;
+    text-decoration: none;
+}
+footer div h3 a:active{
+    color: red;
+    text-decoration: none;
+}
+.navizin
+{
+    display: flex;
+    flex-direction: column;
+}
+.navizin a:hover{
+    color: cyan;
+    text-decoration: none;
+}
+.navizin a:active{
+    color: red;
+    text-decoration: none;
+}
+.navizin
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

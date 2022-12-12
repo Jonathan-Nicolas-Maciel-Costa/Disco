@@ -1,0 +1,77 @@
+html,body {
+        height: 100%
+    }
+main
+{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #1f1f1f;
+        padding: 2%;
+        margin: 1% 25% 0% 25%;
+        border-radius: 5px;
+        overflow: hidden;
+
+}
+.divzin
+{
+        margin-top: 10%;
+}
+
+main div, footer div nav a, footer div h3 a
+{
+    color: white;
+}
+main div h2 a
+{
+    color: gray;
+}
+main div h2 a:hover{
+    color: cyan;
+    text-decoration: none;
+}
+main div h2 a:active{
+    color: red;
+    text-decoration: none;
+}
+.color_disk
+{
+    color: pink;
+}
+.color_update
+{
+    width: max-content;
+    color: greenyellow;
+}
+.link_update
+{
+    display: flex;
+    flex-direction: column;
+}
+.divzin
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 5%;
+}
+.color_delete
+{
+    color: red;
+    display: flex;
+    flex-wrap: wrap;
+}
+.space_
+{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.divzin  .mainmain
+{
+    display: flex;
+    width: 200px;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

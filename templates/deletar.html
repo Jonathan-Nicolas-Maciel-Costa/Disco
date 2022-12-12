@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block import %}
+    <title>Deletar_disco</title>
+    <link rel="stylesheet" href="{% static 'css/deletar.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<main>
+    <p>Voce tem certeza que deseja obliterar o disco '{{object.nome}}' do seu database?</p>
+
+    <form action="." method="post">
+        {% csrf_token %}
+        <input type="submit" value="Shin">
+        <a href="{% url 'Home' %}">
+            <input class="nao" type="reset" onclick="location.href= '{% url 'Home' %}'" value="obv q n ta loco?">
+        </a>
+    </form>
+</main>
+
+{% endblock %}
