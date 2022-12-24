@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block import %}
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/cadastro_login.css' %}">
+{% endblock %}
+{%block main%}
+
+<main>
+    <section>
+    {%if messages%}
+    {%for message in messages%}
+    {{message}}
+    {%endfor%}
+    {%endif%}
+
+    <form action="" method="post" id="login_form">
+        {%csrf_token%}
+        {{form.as_p}}
+        {% comment %} {{form.username}}
+        {{form.password}} {% endcomment %}
+        <div>
+            <button type="submit">Login</button>
+            <p>Não tem um conta? <a class='link' href="{%url 'cadastro'%}">Click here</a></p>
+        </div>
+    </form>
+    </section>
+
+</main>
+{%endblock%}

@@ -17,7 +17,7 @@
         <div class='divzin'>
             <div class="mainmain">
                 {% for discos in object_list %}
-                    <h2 class="space_" ><a class="color_disk" href="{% url 'Detalhes' discos.id %}">{{discos.nome}}</a></h2>
+                    <h2 class="space_" ><a class="color_disk" href="{% url 'Detalhes_classView' discos.id %}">{{discos.nome}}</a></h2>
                 {% endfor %}
             </div>
             

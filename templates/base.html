@@ -24,6 +24,7 @@
             <nav>
                 <a href="">Arquivos</a>
                 <a href="{% url 'criar_disco' %}">Adicionar Disco</a>
+                <a id='logout' href="{% url 'logout' %}">Logout</a>
             </nav>
         </div>
     </header>
@@ -35,10 +36,10 @@
 
     <footer>
         <div>
-            <a href="{% url 'Home' %}"><h2>Discos</h2></a>
-            {% for disco in object_list %}
+            <a href="{% url 'Home' %}"><h2 class="sl">Discos</h2></a>
+            {% comment %} {% for disco in object_list %}
                 <h3><a href="{% url 'Detalhes' disco.id %}">{{disco.nome}}  </a> </h3>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
         </div>
         <div class="navizin2">
             <nav class="navizin">

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 from .models import disco
 from  django.urls import reverse_lazy
 from .form import disco_form
@@ -11,38 +12,42 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 ) 
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
+
 # Create your views here.
 
-
-class detalhesClassView(DetailView): 
+class detalhesClassView(LoginRequiredMixin,DetailView): 
     template_name="detalhes.html"
     model = disco
     queryset = disco.objects.all()
     
-class indexClassView(ListView):
+
+class indexClassView(LoginRequiredMixin,ListView):
     template_name="index.html"
     model = disco
     queryset = disco.objects.all()
     
-class createClass (CreateView):
+class createClass (LoginRequiredMixin,CreateView):
     template_name="criar_disco.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
     
-class updateClass(UpdateView):
+class updateClass(LoginRequiredMixin,UpdateView):
     template_name="criar_disco.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
     
-class deleteClass(DeleteView):
+class deleteClass(LoginRequiredMixin,DeleteView):
     template_name="deletar.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
     
-    
+"""    
 def index_view (request):
 
     discos = disco.objects.all()
@@ -100,3 +105,4 @@ def create (request):
             'form':form
         }
         return render(request, 'criar_disco.html', context)
+ """

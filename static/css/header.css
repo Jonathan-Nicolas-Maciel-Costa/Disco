@@ -38,3 +38,15 @@ header div a:active{
     color: red;
 }
 
+#logout
+{
+    color: red;
+}
+#logout:hover
+{
+    color: rgb(144, 29, 52);
+}
+#logout:active
+{
+    color: black;
+}

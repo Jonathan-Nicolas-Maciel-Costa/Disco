@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-p4hrq7l#x@murfw%^#shf3ef#4)ydo)8qc%vq^nrre4v4v$_=c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1','https://*.127.0.0.1','https://*127.0.0.1:8000/user/login/']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
 
 LANGUAGE_CODE = 'PT-BR'
 USE_I18N = True
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'Discos',
+    'Users'
 
 ]
 
@@ -126,7 +130,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
 
-        "static"
+        "static",
+        "BASE_DIR/static"
 
 ]
 
@@ -135,3 +140,10 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'Users.CustomUser'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/user/login'
+
+CSRF_COOKIE_DOMAIN = None

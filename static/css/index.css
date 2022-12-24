@@ -27,6 +27,14 @@ main div h2 a
 {
     color: gray;
 }
+.sl:hover
+{
+    color: cyan;
+}
+.sl:active
+{
+    color: red;
+}
 main div h2 a:hover{
     color: cyan;
     text-decoration: none;
@@ -74,4 +82,16 @@ main div h2 a:active{
     overflow: hidden;
     flex-direction: column;
     flex-wrap: wrap;
+}
+#logout
+{
+    color: red;
+}
+#logout:hover
+{
+    color: crimson;
+}
+#logout:active
+{
+    color: black;
 }

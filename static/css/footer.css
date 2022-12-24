@@ -9,15 +9,15 @@ a
 }
 footer
 {
-    position: absolute;
-    top: 100vh;
+    position: relative;
+    bottom: 0%;
     width: 100%;
-    margin-top: calc(20vh);
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
     background-color: #1f1f1f;
+    margin-top: 70vh;
     padding: 2%;
 
 }
