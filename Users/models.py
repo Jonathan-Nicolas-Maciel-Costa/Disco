@@ -43,6 +43,7 @@ class CustomUser(AbstractUser):
     phone = models.CharField("Telefone", max_length=15)
     is_staff = models.BooleanField('Membro da equipe', default=True)
     username = models.CharField(("Nome"), max_length=50, unique=False, primary_key=None)
+    image = models.ImageField(('Image de perfil'), upload_to='imagens', default = None)
 
     USERNAME_FIELD = 'matricula'
     REQUIRED_FIELDS = ['first_name', 'email' ,'username', 'phone']

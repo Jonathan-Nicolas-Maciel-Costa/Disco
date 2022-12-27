@@ -85,11 +85,24 @@ WSGI_APPLICATION = 'Sebo_de_disco_enterprise.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+} """
+
+#base de dados ja deve estar criado, django ja cria as tabelas EXEMPLO VVVV
+
+
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'teste',
+       'USER': 'postgres',
+       'PASSWORD': 'sql',
+       'HOST': 'localhost',
+       'PORT': '5432'}
 }
 
 
@@ -147,3 +160,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/user/login'
 
 CSRF_COOKIE_DOMAIN = None
+
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')

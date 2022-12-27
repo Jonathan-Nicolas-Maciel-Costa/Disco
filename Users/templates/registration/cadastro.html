@@ -11,13 +11,9 @@
 <main>
     <section>
         <h1 style="color: yellow;">Register</h1>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {%csrf_token%}
-            {%if messages%}
-            {%for message in messages%}
-            {{message}}
-            {%endfor%}
-            {%endif%}
+            
             <div class='form'>
                 <p>
                     <label class="cadastro_fix" for="username">Apelido:</label>
@@ -53,12 +49,27 @@
                 <p>
                     <label class="cadastro_fix" for="email">Senha</label> 
                     {{form.password1}}
+                    
+                    {{form.password1.messages}}
                 </p>
 
                 <p>
                     <label class="cadastro_fix" for="email">Confirme a senha</label> 
                     {{form.password2}}
+                    {%if form.password2.messages%}
+                    {%for message in form.password2.messages%}
+                    {{message}}
+                    {%endfor%}
+                    {%endif%}
+                    {{form.password2.messages}}
+
                 </p>
+                <div>
+                    <p>
+                        <label class="cadastro_fix" for="image">Imagem</label> 
+                        {{form.image}}
+                    </p>
+                </div>
                 
             </div>
 

@@ -22,30 +22,35 @@ class detalhesClassView(LoginRequiredMixin,DetailView):
     template_name="detalhes.html"
     model = disco
     queryset = disco.objects.all()
+    login_url= '/user/login'
     
 
 class indexClassView(LoginRequiredMixin,ListView):
     template_name="index.html"
     model = disco
     queryset = disco.objects.all()
+    login_url= '/user/login'
     
 class createClass (LoginRequiredMixin,CreateView):
     template_name="criar_disco.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
+    login_url= '/user/login'
     
 class updateClass(LoginRequiredMixin,UpdateView):
     template_name="criar_disco.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
+    login_url= '/user/login'
     
 class deleteClass(LoginRequiredMixin,DeleteView):
     template_name="deletar.html"
     model = disco
     fields = '__all__'
     success_url = reverse_lazy('Home')
+    login_url= '/user/login'
     
 """    
 def index_view (request):
